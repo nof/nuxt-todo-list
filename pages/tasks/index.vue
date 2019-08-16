@@ -1,20 +1,23 @@
 <template>
   <section class="container pt-5">
-
-    <div class="card mb-5">
-      <div class="card-header">
-        やること
+    <div class="row">
+      <div class="col-6">
+        <div class="card">
+          <div class="card-header">
+            やること
+          </div>
+          <task-list :tasks="unfinishedTasks" />
+        </div>
       </div>
-      <task-list :tasks="unfinishedTasks" />
-    </div>
-
-    <div class="card">
-      <div class="card-header">
-        やったこと
+      <div class="col-6">
+        <div class="card">
+          <div class="card-header">
+            やったこと
+          </div>
+          <task-list :tasks="finishedTasks" />
+        </div>
       </div>
-      <task-list :tasks="finishedTasks" />
     </div>
-
   </section>
 </template>
 
@@ -26,7 +29,7 @@ export default {
   data() {
     return {
       tasks: [
-        { id: 1, title: '牛乳を買う', finished: true },
+        { id: 1, title: '牛乳を買う', finished: false },
         { id: 2, title: 'たまごを買う', finished: false },
       ]
     }

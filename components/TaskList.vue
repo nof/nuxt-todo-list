@@ -1,9 +1,9 @@
 <template>
-  <ul class="list-group list-group-flush">
+  <ul class="list-group list-group-flush px-3">
     <li 
       v-for="task in tasks" 
       :key="task.id"
-      class="list-group-item ml-3"
+      class="list-group-item"
     >
       <input 
         :id="`task-checkbox-${task.id}`"
