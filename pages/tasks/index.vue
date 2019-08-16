@@ -1,24 +1,14 @@
-<template>
-  <section class="container pt-5">
-    <div class="row">
-      <div class="col-6">
-        <div class="card">
-          <div class="card-header">
-            やること
-          </div>
-          <task-list :tasks="unfinishedTasks" />
-        </div>
-      </div>
-      <div class="col-6">
-        <div class="card">
-          <div class="card-header">
-            やったこと
-          </div>
-          <task-list :tasks="finishedTasks" />
-        </div>
-      </div>
-    </div>
-  </section>
+<template lang="pug">
+  section.container.pt-5
+    .row
+      .col-6
+        .card
+          .card-header やること
+          task-list(:tasks="unfinishedTasks")
+      .col-6
+        .card
+          .card-header やったこと
+          task-list(:tasks="finishedTasks")
 </template>
 
 <script>
