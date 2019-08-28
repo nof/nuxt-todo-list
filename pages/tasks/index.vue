@@ -4,11 +4,11 @@
       .col-6
         .card
           .card-header やること
-          task-list(:tasks="unfinishedTasks")
+          task-list(:tasks="unfinishedTasks" @check="onTaskCheck")
       .col-6
         .card
           .card-header やったこと
-          task-list(:tasks="finishedTasks")
+          task-list(:tasks="finishedTasks" @check="onTaskCheck")
 </template>
 
 <script>
@@ -32,5 +32,12 @@ export default {
       return this.tasks.filter((task) => { return !task.finished })
     }
   },
+  methods: {
+    onTaskCheck(taskId) {
+      const task = this.tasks.find(task => task.id === taskId)
+      this.$set(task, 'finished', !task.finished)
+    }
+  }
+
 }
 </script>
