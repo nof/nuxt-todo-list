@@ -10,8 +10,7 @@ export default {
   props: {
     tasks: {
       type: Array,
-      required: true,
-      default: () => { return [] }
+      required: true
     }
   }
 }
